@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+       margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+  background: linear-gradient(to right, #6b001b, crimson);
+}
+
+.bola {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    z-index: 9999; /* fica por cima de tudo */
+    pointer-events: none;
+}
+
+/* Aqui você controla o tamanho da bola */
+.bola1 {
+    width: 200px;
+    position: absolute;
+    animation: voltaSite 10s linear infinite;
+    margin-left: -5%;
+}
+
+/* Animação para dar a volta completa nas bordas da tela */
+@keyframes voltaSite {
+    0% {
+        top: 0;
+        left: 0;
+    }
+    25% {
+        top: 0;
+        left: calc(100vw - 120px);
+    }
+    50% {
+        top: calc(100vh - 120px);
+        left: calc(100vw - 120px);
+    }
+    75% {
+        top: calc(100vh - 120px);
+        left: 0;
+    }
+    100% {
+        top: 0;
+        left: 0;
+    }
+}
+
+.h2{
+    color: rgb(230, 227, 228);
+    text-align: center;
+    margin-top: 2%;
+    font-size: 70px;
+    margin-left: 5%;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+}
+
+.h1{
+    text-align: center;
+    margin-left: -5%;
+    font-size: 70px;
+}
+
+.h3{
+    text-align: center;
+    margin-top: 10%;
+    font-size: 70px;
+    margin-left: -5%;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.imgLogo{
+    display: flex;
+    margin-left: -30%;
+    border-radius: 50px;
+    width: 300px;
+    height: 250px;
+}
+
+.h4{
+     text-align: center;
+    margin-top: 10%;
+    font-size: 70px;
+    margin-left: -5%;
+}
+
+.img{
+    width: 400px;
+    position: absolute;
+    margin-left: 34%;
+    margin-top: 2%;
+    border-radius: 15px;
+    position: relative;
+ animation: Flutuar 2s ease-in-out infinite alternate;
+  box-shadow: 45px 45px 30px #080808;
+}
+
+.img:houver{
+    display: flex;
+
+ transform: scale(1.05);
+ position: relative;
+ animation: Flutuar 2s ease-in-out infinite alternate;
+}
+
+@keyframes Flutuar {
+     0%{
+        top: 0;
+    }
+    100%{
+        top: 30px;
+    }
+}
