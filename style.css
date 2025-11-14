@@ -1,6 +1,5 @@
 *{
     margin: 0;
-       margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
@@ -10,69 +9,40 @@ body{
   background: linear-gradient(to right, #6b001b, crimson);
 }
 
+/* --- BOLA ANIMADA --- */
+
 .bola {
     position: fixed;
     top: 0;
     left: 0;
     width: 0;
     height: 0;
-    z-index: 9999; /* fica por cima de tudo */
+    z-index: 9999;
     pointer-events: none;
 }
 
-/* Aqui você controla o tamanho da bola */
 .bola1 {
-    width: 200px;
+    width: 150px;
     position: absolute;
     animation: voltaSite 10s linear infinite;
-    margin-left: -5%;
 }
 
-/* Animação para dar a volta completa nas bordas da tela */
+/* Animação */
 @keyframes voltaSite {
-    0% {
-        top: 0;
-        left: 0;
-    }
-    25% {
-        top: 0;
-        left: calc(100vw - 120px);
-    }
-    50% {
-        top: calc(100vh - 120px);
-        left: calc(100vw - 120px);
-    }
-    75% {
-        top: calc(100vh - 120px);
-        left: 0;
-    }
-    100% {
-        top: 0;
-        left: 0;
-    }
+    0% { top: 0; left: 0; }
+    25% { top: 0; left: calc(100vw - 150px); }
+    50% { top: calc(100vh - 150px); left: calc(100vw - 150px); }
+    75% { top: calc(100vh - 150px); left: 0; }
+    100% { top: 0; left: 0; }
 }
+
+/* --- TEXTOS E LOGO --- */
 
 .h2{
     color: rgb(230, 227, 228);
     text-align: center;
-    margin-top: 2%;
     font-size: 70px;
-    margin-left: 5%;
     font-weight: 700;
-    font-family: "Poppins", sans-serif;
-}
-
-.h1{
-    text-align: center;
-    margin-left: -5%;
-    font-size: 70px;
-}
-
-.h3{
-    text-align: center;
-    margin-top: 10%;
-    font-size: 70px;
-    margin-left: -5%;
 }
 
 .logo{
@@ -80,47 +50,95 @@ body{
     justify-content: center;
     align-items: center;
     margin-top: 5%;
+    gap: 20px;
 }
 
 .imgLogo{
-    display: flex;
-    margin-left: -30%;
     border-radius: 50px;
     width: 300px;
     height: 250px;
 }
 
-.h4{
-     text-align: center;
-    margin-top: 10%;
-    font-size: 70px;
-    margin-left: -5%;
+/* --- JOGADORES --- */
+
+.jogadores {
+    text-align: center;
+    margin-top: 50px;
 }
 
+.h1, .h3, .h4 {
+    font-size: 65px;
+    margin-top: 50px;
+}
+
+/* Imagens dos jogadores */
 .img{
     width: 400px;
-    position: absolute;
-    margin-left: 34%;
-    margin-top: 2%;
     border-radius: 15px;
-    position: relative;
- animation: Flutuar 2s ease-in-out infinite alternate;
-  box-shadow: 45px 45px 30px #080808;
+    animation: Flutuar 2s ease-in-out infinite alternate;
+    box-shadow: 45px 45px 30px #080808;
+    margin-top: 15px;
 }
 
-.img:houver{
-    display: flex;
-
- transform: scale(1.05);
- position: relative;
- animation: Flutuar 2s ease-in-out infinite alternate;
+/* Corrigido: o certo é hover (não houver) */
+.img:hover{
+    transform: scale(1.05);
 }
 
 @keyframes Flutuar {
-     0%{
-        top: 0;
+     0%{ top: 0; }
+    100%{ top: 30px; }
+}
+
+/* --------------------- */
+/*     RESPONSIVIDADE     */
+/* --------------------- */
+
+/* Tablets */
+@media (max-width: 900px) {
+    .imgLogo {
+        width: 220px;
+        height: 180px;
     }
-    100%{
-        top: 30px;
+
+    .h1, .h2, .h3, .h4 {
+        font-size: 50px;
+    }
+
+    .img {
+        width: 300px;
+    }
+
+    .bola1 {
+        width: 120px;
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+
+    .logo {
+        flex-direction: column;
+    }
+
+    .imgLogo {
+        width: 180px;
+        height: 150px;
+    }
+
+    .h1, .h2, .h3, .h4 {
+        font-size: 35px;
+    }
+
+    .img {
+        width: 80%;
+        box-shadow: 20px 20px 15px #080808;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bola1 {
+        width: 100px;
     }
 }
